@@ -2,6 +2,7 @@ extends Area3D
 class_name drop_zone
 
 var items_in_zone: Array[String] = []
+var win_check_bool : bool = false
 
 @export_group("Conditions")
 @export var items_target : int = 1
@@ -46,9 +47,6 @@ func _on_body_exited(body: Node3D) -> void:
 func win_check(total_items : int):
 	
 	if total_items == items_target :
-		
-		print("BODYAAA")
-		
 		var array_comparator : Array[String] = items_number
 		
 		array_comparator.sort()
@@ -60,6 +58,12 @@ func win_check(total_items : int):
 		if array_comparator == items_in_zone:
 			
 			$MeshInstance3D.material_override = win_material
+			win_check_bool = true
+			
+		else :
+			$MeshInstance3D.material_override = loose_material
+			win_check_bool = false
 		
 	if total_items != items_target :
 		$MeshInstance3D.material_override = loose_material
+		win_check_bool = false

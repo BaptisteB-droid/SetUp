@@ -60,6 +60,8 @@ func instantiate_events():
 
 #Liste de toutes les zones instantiés, quand elles sont toutes win, passer a la next
 #variable bool wincheck = true
+func wincheckpassed():
+	pass
 
 func remove_old_event():
 	#Find all the zones and destroy them
