@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cctcugm2oe4en"]
+
+[ext_resource type="Script" uid="uid://borm5gh6jxhr1" path="res://Scripts/pickable_object.gd" id="1_8yln3"]
+[ext_resource type="Material" uid="uid://uta3ct203fov" path="res://Materials/M_White.tres" id="2_8yln3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fmbyg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fmbyg"]
+
+[node name="PickableObject" type="Node3D" groups=["PickableObjects"]]
+script = ExtResource("1_8yln3")
+po_name = "Base"
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." groups=["PickableObjects"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_fmbyg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+material_override = ExtResource("2_8yln3")
+mesh = SubResource("BoxMesh_fmbyg")
+skeleton = NodePath("../..")

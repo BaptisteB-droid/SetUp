@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2gyoicottnim"]
+
+[ext_resource type="PackedScene" uid="uid://cctcugm2oe4en" path="res://Scenes/Gameplay/Pickable_Object.tscn" id="1_spdvl"]
+[ext_resource type="Material" uid="uid://dvqatalha6a3i" path="res://Materials/M_Green.tres" id="2_0jbs1"]
+
+[node name="PickableObject" instance=ExtResource("1_spdvl")]
+po_name = "Table"
+
+[node name="MeshInstance3D" parent="RigidBody3D" index="1"]
+material_override = ExtResource("2_0jbs1")

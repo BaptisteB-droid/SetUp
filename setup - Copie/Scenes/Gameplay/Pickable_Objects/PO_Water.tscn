@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://puclw5jelf53"]
+
+[ext_resource type="PackedScene" uid="uid://cctcugm2oe4en" path="res://Scenes/Gameplay/Pickable_Object.tscn" id="1_qyh48"]
+[ext_resource type="Material" uid="uid://ck2uwirkwst0l" path="res://Materials/M_Blue.tres" id="2_qt3j7"]
+
+[node name="PickableObject" instance=ExtResource("1_qyh48")]
+po_name = "Water"
+
+[node name="MeshInstance3D" parent="RigidBody3D" index="1"]
+material_override = ExtResource("2_qt3j7")

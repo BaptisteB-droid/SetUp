@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://28yr4nh2fhs"]
+
+[ext_resource type="Script" uid="uid://c6x5tfcgic8fi" path="res://Scripts/player.gd" id="1_a3d8c"]
+[ext_resource type="Material" uid="uid://5x5q3aghrook" path="res://Materials/M_Black.tres" id="1_uvnfx"]
+[ext_resource type="Material" uid="uid://c1te331xh4561" path="res://Materials/Gameplay/M_Loose.tres" id="3_xpcdj"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_a3d8c"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xpcdj"]
+size = Vector3(0.5, 0.15, 0.25)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uvnfx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mtuoh"]
+
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
+script = ExtResource("1_a3d8c")
+sprint_speed = 1000.0
+
+[node name="Player_Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_a3d8c")
+
+[node name="Player_Eyes" type="MeshInstance3D" parent="Player_Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0.345707)
+material_override = ExtResource("1_uvnfx")
+mesh = SubResource("BoxMesh_xpcdj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_uvnfx")
+
+[node name="Hands" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
+
+[node name="RayCast3D" type="RayCast3D" parent="Hands"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, -0.5)
+target_position = Vector3(0, 0, 4)
+hit_back_faces = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Hands"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+material_override = ExtResource("3_xpcdj")
+mesh = SubResource("BoxMesh_mtuoh")

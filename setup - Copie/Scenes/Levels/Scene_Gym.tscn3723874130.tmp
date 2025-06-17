@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://dd8tw51yvdsoh"]
+
+[ext_resource type="Material" uid="uid://057m3x7i2qov" path="res://Materials/M_LightBrown.tres" id="1_1exxk"]
+[ext_resource type="PackedScene" uid="uid://28yr4nh2fhs" path="res://Scenes/Player/player.tscn" id="2_7mft1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_obybb"]
+sky_top_color = Color(0.563755, 0.630877, 0.863795, 1)
+sky_horizon_color = Color(0.862884, 0.871914, 0.921144, 1)
+ground_horizon_color = Color(0.862884, 0.871914, 0.921144, 1)
+
+[sub_resource type="Sky" id="Sky_qbcva"]
+sky_material = SubResource("ProceduralSkyMaterial_obybb")
+
+[sub_resource type="Environment" id="Environment_8mywk"]
+background_mode = 2
+sky = SubResource("Sky_qbcva")
+tonemap_mode = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_obybb"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7mft1"]
+size = Vector3(50, 1, 50)
+
+[node name="Level" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8mywk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.995725, 0, -0.0923706, 0, 1, 0, 0.0923706, 0, -0.995725, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 2.99003e-08, -8.21505e-08, 0, 0.939693, 0.34202, 8.74228e-08, 0.34202, -0.939693, 0, 7.5, -10)
+fov = 85.2654
+
+[node name="Entities" type="Node3D" parent="."]
+
+[node name="Player" parent="Entities" instance=ExtResource("2_7mft1")]
+base_speed = 350.0
+
+[node name="Architecture" type="Node" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Architecture"]
+
+[node name="Ground" type="MeshInstance3D" parent="Architecture/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = ExtResource("1_1exxk")
+mesh = SubResource("BoxMesh_obybb")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Architecture/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_7mft1")

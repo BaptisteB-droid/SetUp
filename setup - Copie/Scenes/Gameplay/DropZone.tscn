@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://chy6r3vuublwr"]
+
+[ext_resource type="Script" uid="uid://bkh8xwn2a7r7q" path="res://Scripts/drop_zone.gd" id="1_6fs5l"]
+[ext_resource type="Material" uid="uid://c1te331xh4561" path="res://Materials/Gameplay/M_Loose.tres" id="3_3cveq"]
+[ext_resource type="Material" uid="uid://l0ybwajidtq3" path="res://Materials/Gameplay/M_Win.tres" id="3_6p5rc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ha404"]
+margin = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_6p5rc"]
+material = ExtResource("3_3cveq")
+
+[node name="Area3D" type="Area3D"]
+script = ExtResource("1_6fs5l")
+win_material = ExtResource("3_6p5rc")
+loose_material = ExtResource("3_3cveq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_ha404")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("3_3cveq")
+mesh = SubResource("BoxMesh_6p5rc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
