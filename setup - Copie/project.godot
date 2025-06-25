@@ -15,11 +15,20 @@ run/main_scene="uid://dd8tw51yvdsoh"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+EventManager="*res://Scenes/Gameplay/EventManager.tscn"
+OnScreenTimer="*res://Scenes/GUI/on_screen_timer.tscn"
+ClientsManager="*res://Scenes/Gameplay/clients_manager.tscn"
+ObjectsManager="*res://Scenes/Gameplay/objects_manager.tscn"
+
 [global_group]
 
 PickableObjects=""
 Camera=""
 Player=""
+Task_List_Control=""
+DropZone=""
 
 [input]
 

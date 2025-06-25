@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dd8tw51yvdsoh"]
+[gd_scene load_steps=18 format=3 uid="uid://dd8tw51yvdsoh"]
 
 [ext_resource type="Material" uid="uid://057m3x7i2qov" path="res://Materials/M_LightBrown.tres" id="1_1exxk"]
 [ext_resource type="PackedScene" uid="uid://cx1n2tidt5dc7" path="res://Scenes/Player/camera_3d.tscn" id="1_sq0f8"]
@@ -6,14 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://dgl0ekdst83kn" path="res://Scenes/GUI/task_list_control.tscn" id="2_lctau"]
 [ext_resource type="Material" uid="uid://bnvn361104gcw" path="res://Materials/M_DarkBrown.tres" id="4_5jg11"]
 [ext_resource type="PackedScene" uid="uid://dgv3mj25xgf6x" path="res://Scenes/Gameplay/Pickable_Objects/PO_Chair.tscn" id="4_ak3lr"]
-[ext_resource type="PackedScene" uid="uid://boaglfthc2fje" path="res://Scenes/Gameplay/EventManager.tscn" id="4_wchst"]
 [ext_resource type="PackedScene" uid="uid://b2gyoicottnim" path="res://Scenes/Gameplay/Pickable_Objects/PO_Table.tscn" id="5_sq0f8"]
 [ext_resource type="PackedScene" uid="uid://puclw5jelf53" path="res://Scenes/Gameplay/Pickable_Objects/PO_Water.tscn" id="6_mqg8e"]
 [ext_resource type="PackedScene" uid="uid://7nlcbwof5q2v" path="res://Scenes/Gameplay/CameraZone.tscn" id="8_mqg8e"]
 [ext_resource type="Resource" uid="uid://v5cxn08r5b5l" path="res://ResourcesTypes/CameraResource_0.tres" id="10_5jg11"]
 [ext_resource type="Resource" uid="uid://5a0l0pmqvw8g" path="res://ResourcesTypes/CameraResource_1.tres" id="11_3smq2"]
 [ext_resource type="Resource" uid="uid://cx6hbynetokwj" path="res://ResourcesTypes/CameraResource_2.tres" id="12_c3qyk"]
-[ext_resource type="PackedScene" uid="uid://bw7p5oklqys2j" path="res://Scenes/GUI/on_screen_timer.tscn" id="13_c3qyk"]
 
 [sub_resource type="GDScript" id="GDScript_ak3lr"]
 
@@ -44,13 +42,7 @@ shadow_enabled = true
 
 [node name="Managers" type="Node" parent="."]
 
-[node name="EventManager" parent="Managers" instance=ExtResource("4_wchst")]
-
 [node name="TaskListControl" parent="Managers" instance=ExtResource("2_lctau")]
-instructions = Array[String](["Water near the back at the back. Two chairs a table between the pillar and a chair in the ", "Place the table and all the chairs between the pillars, and the water goes next to the storage room."])
-
-[node name="OnScreenTimer" parent="Managers" instance=ExtResource("13_c3qyk")]
-begin_time = "07 : 00"
 
 [node name="Entities" type="Node3D" parent="."]
 
@@ -105,19 +97,22 @@ skeleton = NodePath("")
 [node name="PickableObjects" type="Node" parent="Gameplay"]
 
 [node name="PickableObject" parent="Gameplay/PickableObjects" instance=ExtResource("5_sq0f8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0261, 0.5, -9.39859)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9739, 0.5, 6.60141)
 
 [node name="PickableObject2" parent="Gameplay/PickableObjects" instance=ExtResource("6_mqg8e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72839, 0.5, -16.0274)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.27161, 0.5, -13.0274)
+
+[node name="PickableObject6" parent="Gameplay/PickableObjects" instance=ExtResource("6_mqg8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.27161, 0.5, -13.0274)
 
 [node name="PickableObject3" parent="Gameplay/PickableObjects" instance=ExtResource("4_ak3lr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.34856, 0.5, -8.87999)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.65144, 0.5, 4.12001)
 
 [node name="PickableObject4" parent="Gameplay/PickableObjects" instance=ExtResource("4_ak3lr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8825, 0.5, -14.2418)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8825, 0.5, 14.7582)
 
 [node name="PickableObject5" parent="Gameplay/PickableObjects" instance=ExtResource("4_ak3lr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.47595, 0.5, -11.4427)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.52405, 0.5, 5.5573)
 
 [node name="CameraZones" type="Node" parent="Gameplay"]
 

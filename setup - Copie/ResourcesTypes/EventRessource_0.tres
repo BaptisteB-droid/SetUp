@@ -25,7 +25,7 @@ metadata/_custom_type_script = "uid://tcjkf2fs2uxs"
 [sub_resource type="Resource" id="Resource_gptuj"]
 script = ExtResource("2_3jo1n")
 dropzone_scene = ExtResource("3_o4ld0")
-zone_position = Vector3(-7, 1, 17)
+zone_position = Vector3(-7, 0, 17)
 zone_rotation = Vector3(0, 0, 0)
 zone_scale = Vector3(2, 1, 2)
 items_number = Array[String](["Chair"])
@@ -34,5 +34,5 @@ metadata/_custom_type_script = "uid://tcjkf2fs2uxs"
 [resource]
 script = ExtResource("1_83fyc")
 zones_to_spawn = Array[ExtResource("2_3jo1n")]([SubResource("Resource_n3uqo"), SubResource("Resource_e3h43"), SubResource("Resource_gptuj")])
-timer = 0.0
+timer = 30.0
 metadata/_custom_type_script = "uid://s6gejvw7qlan"

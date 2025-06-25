@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bw7p5oklqys2j"]
+[gd_scene load_steps=2 format=3 uid="uid://b54qoawjcyq5t"]
 
 [ext_resource type="Script" uid="uid://bhlc65r5a72dl" path="res://Scripts/on_screen_timer.gd" id="1_w7v3m"]
 
@@ -10,9 +10,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w7v3m")
-second_speed = 2.0
+begin_time = "07 : 00"
+second_speed = 1.0
+roll_ration = 1.0
+min_normal = 600.0
+max_normal = 600.0
+min_calm = 600.0
+max_calm = 600.0
 
-[node name="Label" type="Label" parent="."]
+[node name="Label_Timer" type="Label" parent="."]
 layout_mode = 0
 offset_right = 75.0
 offset_bottom = 30.0
@@ -20,6 +26,25 @@ text = "00 : 00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Label_Deadline" type="Label" parent="."]
+layout_mode = 0
+offset_top = 37.0
+offset_right = 75.0
+offset_bottom = 67.0
+text = "Deadline"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Label_Deadline_Time" type="Label" parent="Label_Deadline"]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 2.0
+offset_right = 141.0
+offset_bottom = 32.0
+text = "00 : 00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer_Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer_Timer" to="." method="_on_timer_timeout"]

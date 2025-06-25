@@ -6,7 +6,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_td1ie"]
 font_color = Color(0, 0, 0, 1)
 
-[node name="TaskListControl" type="Control"]
+[node name="TaskListControl" type="Control" groups=["Task_List_Control"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,6 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_td1ie")
+instructions = Array[String](["Water near the back at the back. Two chairs a table between the pillar and a chair in the ", "Place the table and all the chairs between the pillars, and the water goes next to the storage room."])
 
 [node name="NoteControl" type="Control" parent="."]
 anchors_preset = 0

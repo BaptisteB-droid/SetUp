@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://bk1yhmrxkpk78"]
+
+[ext_resource type="Script" uid="uid://dtxt1ski7ps1p" path="res://Scripts/Managers/clients_manager.gd" id="1_bl57c"]
+[ext_resource type="Script" uid="uid://rn3o4okvnhlf" path="res://Scripts/Resources/clients_resource.gd" id="2_0q3ju"]
+[ext_resource type="Texture2D" uid="uid://nd784a1fw0ji" path="res://Textures/Client.png" id="3_uitjo"]
+[ext_resource type="Texture2D" uid="uid://ckc0fluulnsu1" path="res://Textures/Directeur.png" id="4_n3lnh"]
+
+[sub_resource type="Resource" id="Resource_gptuj"]
+script = ExtResource("2_0q3ju")
+client_name = "Client"
+client_image = ExtResource("3_uitjo")
+client_text = "Bonjour, vous pouvez mettre les fleurs là bas plutot ?"
+missions_array = Array[int]([3])
+min_chance = 0.0
+max_chance = 0.0
+metadata/_custom_type_script = "uid://rn3o4okvnhlf"
+
+[sub_resource type="Resource" id="Resource_dko4a"]
+script = ExtResource("2_0q3ju")
+client_name = "Director"
+client_image = ExtResource("4_n3lnh")
+client_text = "Hop hop hop ! On se dépeche, tout doit être fini avant son arrivée !"
+missions_array = Array[int]([3])
+min_chance = 0.0
+max_chance = 0.0
+metadata/_custom_type_script = "uid://rn3o4okvnhlf"
+
+[sub_resource type="LabelSettings" id="LabelSettings_ncmyt"]
+font_size = 30
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mbmeo"]
+font_size = 45
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="ClientsManager" type="Node3D"]
+script = ExtResource("1_bl57c")
+clients = Array[ExtResource("2_0q3ju")]([SubResource("Resource_gptuj"), SubResource("Resource_dko4a")])
+
+[node name="Clients_Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Image_Texture" type="TextureRect" parent="Clients_Control"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 386.0
+offset_bottom = 648.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Order_Label" type="Label" parent="Clients_Control"]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 400.0
+offset_right = 1152.0
+offset_bottom = 648.0
+label_settings = SubResource("LabelSettings_ncmyt")
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Name_Label" type="Label" parent="Clients_Control"]
+layout_mode = 0
+offset_left = 493.0
+offset_top = 380.0
+offset_right = 1154.0
+offset_bottom = 428.0
+label_settings = SubResource("LabelSettings_mbmeo")
+metadata/_edit_use_anchors_ = true

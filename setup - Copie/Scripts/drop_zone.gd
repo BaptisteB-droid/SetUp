@@ -23,15 +23,10 @@ func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("PickableObjects"):
 		
 		var po_parent: pickable_object = body.get_parent_node_3d()
-		
 		var body_name = po_parent.po_name
 		
 		items_in_zone.append(body_name)
-		
-		print(items_in_zone)
-		
 		win_check(items_in_zone.size())
-		
 
 func _on_body_exited(body: Node3D) -> void:
 	
@@ -51,14 +46,12 @@ func win_check(total_items : int):
 		
 		array_comparator.sort()
 		items_in_zone.sort()
-		
-		print(array_comparator)
-		print(items_in_zone )
-		
+
 		if array_comparator == items_in_zone:
 			
 			$MeshInstance3D.material_override = win_material
 			win_check_bool = true
+			EventManager.wincheckpassed()
 			
 		else :
 			$MeshInstance3D.material_override = loose_material

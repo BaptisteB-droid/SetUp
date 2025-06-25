@@ -1,0 +1,190 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\drop_zone.gd||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:drop_zone.gd||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\Managers\\event_manager.gd||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Managers\\event_manager.gd||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\Managers\\objects_manager.gd||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Managers\\objects_manager.gd||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\Managers\\clients_manager.gd||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Managers\\clients_manager.gd||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\Managers\\camera_manager.gd||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Managers\\camera_manager.gd||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\room_zone.gd||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:room_zone.gd||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\task_list.gd||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:task_list.gd||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\player.gd||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:player.gd||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\pickable_object.gd||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pickable_object.gd||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\on_screen_timer.gd||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:on_screen_timer.gd||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "objects_manager.gd",
+              "DocumentMoniker": "C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\Managers\\objects_manager.gd",
+              "RelativeDocumentMoniker": "Managers\\objects_manager.gd",
+              "ToolTip": "C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\Managers\\objects_manager.gd",
+              "RelativeToolTip": "Managers\\objects_manager.gd",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-24T13:43:14.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "event_manager.gd",
+              "DocumentMoniker": "C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\Managers\\event_manager.gd",
+              "RelativeDocumentMoniker": "Managers\\event_manager.gd",
+              "ToolTip": "C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\Managers\\event_manager.gd",
+              "RelativeToolTip": "Managers\\event_manager.gd",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-24T13:43:14.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "clients_manager.gd",
+              "DocumentMoniker": "C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\Managers\\clients_manager.gd",
+              "RelativeDocumentMoniker": "Managers\\clients_manager.gd",
+              "ToolTip": "C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\Managers\\clients_manager.gd",
+              "RelativeToolTip": "Managers\\clients_manager.gd",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-24T13:43:13.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "camera_manager.gd",
+              "DocumentMoniker": "C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\Managers\\camera_manager.gd",
+              "RelativeDocumentMoniker": "Managers\\camera_manager.gd",
+              "ToolTip": "C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\Managers\\camera_manager.gd",
+              "RelativeToolTip": "Managers\\camera_manager.gd",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-24T13:43:13.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "task_list.gd",
+              "DocumentMoniker": "C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\task_list.gd",
+              "RelativeDocumentMoniker": "task_list.gd",
+              "ToolTip": "C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\task_list.gd",
+              "RelativeToolTip": "task_list.gd",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-24T13:42:51.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "room_zone.gd",
+              "DocumentMoniker": "C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\room_zone.gd",
+              "RelativeDocumentMoniker": "room_zone.gd",
+              "ToolTip": "C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\room_zone.gd",
+              "RelativeToolTip": "room_zone.gd",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-24T13:42:51.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "player.gd",
+              "DocumentMoniker": "C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\player.gd",
+              "RelativeDocumentMoniker": "player.gd",
+              "ToolTip": "C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\player.gd",
+              "RelativeToolTip": "player.gd",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-24T13:42:51.699Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "pickable_object.gd",
+              "DocumentMoniker": "C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\pickable_object.gd",
+              "RelativeDocumentMoniker": "pickable_object.gd",
+              "ToolTip": "C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\pickable_object.gd",
+              "RelativeToolTip": "pickable_object.gd",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-24T13:42:51.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "on_screen_timer.gd",
+              "DocumentMoniker": "C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\on_screen_timer.gd",
+              "RelativeDocumentMoniker": "on_screen_timer.gd",
+              "ToolTip": "C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\on_screen_timer.gd",
+              "RelativeToolTip": "on_screen_timer.gd",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-24T13:42:51.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "drop_zone.gd",
+              "DocumentMoniker": "C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\drop_zone.gd",
+              "RelativeDocumentMoniker": "drop_zone.gd",
+              "ToolTip": "C:\\Users\\1\\Documents\\GodotProjects\\SetupGit\\SetUp\\setup - Copie\\Scripts\\drop_zone.gd",
+              "RelativeToolTip": "drop_zone.gd",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-24T13:42:51.329Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

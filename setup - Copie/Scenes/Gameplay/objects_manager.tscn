@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://w6wpvg6npax0"]
+
+[ext_resource type="Script" uid="uid://tnhtx8spn152" path="res://Scripts/Managers/objects_manager.gd" id="1_yreek"]
+
+[node name="objects_manager" type="Node3D"]
+script = ExtResource("1_yreek")

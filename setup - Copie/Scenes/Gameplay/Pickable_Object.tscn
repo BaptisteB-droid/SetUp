@@ -11,7 +11,7 @@
 script = ExtResource("1_8yln3")
 po_name = "Base"
 
-[node name="RigidBody3D" type="RigidBody3D" parent="." groups=["PickableObjects"]]
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 shape = SubResource("BoxShape3D_fmbyg")

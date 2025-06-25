@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://boaglfthc2fje"]
 
-[ext_resource type="Script" uid="uid://c3r5km5pt2mib" path="res://Scripts/Managers/event_manager.gd" id="1_5utxg"]
+[ext_resource type="Script" uid="uid://c3r5km5pt2mib" path="res://Scripts/event_manager.gd" id="1_5utxg"]
 [ext_resource type="Script" uid="uid://s6gejvw7qlan" path="res://Scripts/Resources/events_resource.gd" id="2_cnthx"]
 [ext_resource type="Resource" uid="uid://dyk6fu2dx1eda" path="res://ResourcesTypes/EventRessource_0.tres" id="3_e3h43"]
 [ext_resource type="Resource" uid="uid://tsis7s338shb" path="res://ResourcesTypes/EventRessource_1.tres" id="4_n3uqo"]

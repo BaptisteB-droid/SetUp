@@ -19,18 +19,5 @@ func _ready() -> void:
 func _on_body_entered(body: Node3D) -> void:
 	
 	if body.is_in_group("Player"):
-		#var t = 0.0
-		#camera_moving = true
 		
 		camera.position = room_data.camera_position
-
-#func _process(delta: float) -> void:
-	#
-	#if camera_moving:
-		#
-		#t = 4
-		#camera.position = camera.position.lerp(room_data.camera_position, t)
-	#
-	#if camera.position == room_data.camera_position:
-		#camera_moving = false
-		#t = 0.0
