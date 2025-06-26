@@ -11,6 +11,7 @@ zone_position = Vector3(0, 0, 10)
 zone_rotation = Vector3(0, 0, 0)
 zone_scale = Vector3(10, 1, 10)
 items_number = Array[String](["Chair", "Chair", "Table", "Chair"])
+can_add_new_item = false
 metadata/_custom_type_script = "uid://tcjkf2fs2uxs"
 
 [sub_resource type="Resource" id="Resource_ontuc"]
@@ -20,6 +21,7 @@ zone_position = Vector3(-7, 0, -1)
 zone_rotation = Vector3(0, 0, 0)
 zone_scale = Vector3(2, 1, 2)
 items_number = Array[String](["Water"])
+can_add_new_item = false
 metadata/_custom_type_script = "uid://tcjkf2fs2uxs"
 
 [resource]

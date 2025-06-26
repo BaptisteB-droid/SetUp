@@ -23,6 +23,7 @@ var first_call : bool = true
 var time_for_mission : int
 var mission_end_time : int
 var mission_ongoing : bool = true
+var debug_bool : bool = true
 
 
 func _ready() -> void:
@@ -30,7 +31,10 @@ func _ready() -> void:
 	timer.start()
 	label.text = begin_time
 	
-	prepare_next_client()
+
+	
+	if debug_bool == true:
+		prepare_next_client()
 	
 	time_for_mission = EventManager.current_event.timer
 	mission_end_time = total_time_seconds + time_for_mission
@@ -70,7 +74,8 @@ func call_new_order():
 	if first_call : 
 		ClientsManager.new_order()
 		first_call = false
-		prepare_next_client()
+		if debug_bool == true:
+			prepare_next_client()
 
 func mission_timechange(time_less : float):
 	mission_end_time -= time_less

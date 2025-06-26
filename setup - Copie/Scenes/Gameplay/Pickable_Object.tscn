@@ -7,16 +7,12 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_fmbyg"]
 
-[node name="PickableObject" type="Node3D" groups=["PickableObjects"]]
+[node name="PickableObject" type="RigidBody3D" groups=["PickableObjects"]]
 script = ExtResource("1_8yln3")
-po_name = "Base"
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_fmbyg")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = ExtResource("2_8yln3")
 mesh = SubResource("BoxMesh_fmbyg")
-skeleton = NodePath("../..")

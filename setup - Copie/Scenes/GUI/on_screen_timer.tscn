@@ -13,10 +13,10 @@ script = ExtResource("1_w7v3m")
 begin_time = "07 : 00"
 second_speed = 1.0
 roll_ration = 1.0
-min_normal = 600.0
-max_normal = 600.0
-min_calm = 600.0
-max_calm = 600.0
+min_normal = 5.0
+max_normal = 5.0
+min_calm = 5.0
+max_calm = 5.0
 
 [node name="Label_Timer" type="Label" parent="."]
 layout_mode = 0

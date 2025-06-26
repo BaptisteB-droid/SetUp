@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgv3mj25xgf6x"]
+[gd_scene load_steps=4 format=3 uid="uid://dgv3mj25xgf6x"]
 
 [ext_resource type="PackedScene" uid="uid://cctcugm2oe4en" path="res://Scenes/Gameplay/Pickable_Object.tscn" id="1_41aqb"]
 [ext_resource type="Material" uid="uid://cy6m1c2tmphg" path="res://Materials/M_Orange.tres" id="1_bqg6b"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_fmbyg"]
+
 [node name="PickableObject" instance=ExtResource("1_41aqb")]
 po_name = "Chair"
 
-[node name="MeshInstance3D" parent="RigidBody3D" index="1"]
+[node name="RigidBody3D#MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
 material_override = ExtResource("1_bqg6b")
+mesh = SubResource("BoxMesh_fmbyg")

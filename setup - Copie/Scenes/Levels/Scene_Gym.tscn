@@ -97,19 +97,25 @@ skeleton = NodePath("")
 [node name="PickableObjects" type="Node" parent="Gameplay"]
 
 [node name="PickableObject" parent="Gameplay/PickableObjects" instance=ExtResource("5_sq0f8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9739, 0.5, 6.60141)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9739, 0.5, 7.60141)
 
 [node name="PickableObject2" parent="Gameplay/PickableObjects" instance=ExtResource("6_mqg8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.27161, 0.5, -13.0274)
 
 [node name="PickableObject6" parent="Gameplay/PickableObjects" instance=ExtResource("6_mqg8e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.27161, 0.5, -13.0274)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7284, 0.5, 12.9726)
 
 [node name="PickableObject3" parent="Gameplay/PickableObjects" instance=ExtResource("4_ak3lr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.65144, 0.5, 4.12001)
 
 [node name="PickableObject4" parent="Gameplay/PickableObjects" instance=ExtResource("4_ak3lr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8825, 0.5, 14.7582)
+
+[node name="PickableObject7" parent="Gameplay/PickableObjects" instance=ExtResource("4_ak3lr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8825, 0.5, 12.7582)
+
+[node name="PickableObject8" parent="Gameplay/PickableObjects" instance=ExtResource("4_ak3lr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8825, 0.5, 9.7582)
 
 [node name="PickableObject5" parent="Gameplay/PickableObjects" instance=ExtResource("4_ak3lr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.52405, 0.5, 5.5573)

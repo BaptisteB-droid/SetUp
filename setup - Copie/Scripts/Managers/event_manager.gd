@@ -60,6 +60,7 @@ func instantiate_events():
 		#Set items_target
 		instance.items_target = current_event.zones_to_spawn[n].items_number.size()
 		instance.items_number = current_event.zones_to_spawn[n].items_number
+		instance.can_new_add_item = current_event.zones_to_spawn[n].can_add_new_item
 		
 		add_child(instance)
 		zones_spawned.append(instance)
@@ -74,9 +75,7 @@ func instantiate_events():
 #variable bool wincheck = true
 #Compter toutes les zones et voir si elles sont vonne
 func wincheckpassed():
-	
 	total_win_check += 1
-	print(total_win_check)
 	
 	if total_win_check == zones_spawned.size() : 
 		print("ca marche")
@@ -84,6 +83,10 @@ func wincheckpassed():
 		total_win_check = 0
 		new_day()
 		
+	pass
+
+func remove_wincheck():
+	total_win_check -= 1
 	pass
 
 func remove_old_event():
