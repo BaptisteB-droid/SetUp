@@ -1,43 +1,107 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgl0ekdst83kn"]
+[gd_scene load_steps=3 format=3 uid="uid://dgl0ekdst83kn"]
 
-[ext_resource type="Texture2D" uid="uid://efjkntopcrfr" path="res://Textures/White.jpg" id="1_lv47x"]
 [ext_resource type="Script" uid="uid://bia2amxb5xho" path="res://Scripts/task_list.gd" id="1_td1ie"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_td1ie"]
-font_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lv47x"]
+bg_color = Color(0.1, 0.1, 0.1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 
 [node name="TaskListControl" type="Control" groups=["Task_List_Control"]]
 layout_mode = 3
-anchors_preset = 15
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -602.0
+offset_top = -323.0
+offset_right = -602.0
+offset_bottom = -323.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+script = ExtResource("1_td1ie")
+
+[node name="NoteControl" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 249.0
+offset_top = -74.0
+offset_right = 547.0
+offset_bottom = 347.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_td1ie")
-instructions = Array[String](["Water near the back at the back. Two chairs a table between the pillar and a chair in the ", "Place the table and all the chairs between the pillars, and the water goes next to the storage room."])
+theme_override_styles/panel = SubResource("StyleBoxFlat_lv47x")
 
-[node name="NoteControl" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+[node name="MarginContainer" type="MarginContainer" parent="NoteControl"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="TextureRect" type="TextureRect" parent="NoteControl"]
-layout_mode = 0
-offset_left = 416.0
-offset_top = 100.0
-offset_right = 1216.0
-offset_bottom = 1220.0
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_lv47x")
+[node name="TaskVBox" type="VBoxContainer" parent="NoteControl/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
 
-[node name="NoteLabel" type="Label" parent="NoteControl"]
-layout_mode = 0
-offset_left = 469.0
-offset_top = 150.0
-offset_right = 696.0
-offset_bottom = 498.0
+[node name="Task_Intro" type="Label" parent="NoteControl/MarginContainer/TaskVBox"]
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
 text = "TEST TEST TEST TEST"
-label_settings = SubResource("LabelSettings_td1ie")
-horizontal_alignment = 1
-vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TaskVBox2" type="VBoxContainer" parent="NoteControl/MarginContainer/TaskVBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Task_1" type="Label" parent="NoteControl/MarginContainer/TaskVBox/TaskVBox2"]
+layout_mode = 2
+text = "TEST TEST TEST TEST"
+
+[node name="Task_2" type="Label" parent="NoteControl/MarginContainer/TaskVBox/TaskVBox2"]
+layout_mode = 2
+text = "TEST TEST TEST TEST"
+
+[node name="Task_3" type="Label" parent="NoteControl/MarginContainer/TaskVBox/TaskVBox2"]
+layout_mode = 2
+text = "TEST TEST TEST TEST"
+
+[node name="Task_4" type="Label" parent="NoteControl/MarginContainer/TaskVBox/TaskVBox2"]
+layout_mode = 2
+text = "TEST TEST TEST TEST"
+
+[node name="Task_Outro" type="Label" parent="NoteControl/MarginContainer/TaskVBox"]
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+text = "TEST TEST TEST TEST"
+autowrap_mode = 3
+
+[node name="TaskVBox3" type="VBoxContainer" parent="NoteControl/MarginContainer/TaskVBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Order_1" type="Label" parent="NoteControl/MarginContainer/TaskVBox/TaskVBox3"]
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+text = "TEST TEST TEST TEST"
+autowrap_mode = 3
+
+[node name="Order_2" type="Label" parent="NoteControl/MarginContainer/TaskVBox/TaskVBox3"]
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+text = "TEST TEST TEST TEST"
+autowrap_mode = 3
+
+[node name="Order_3" type="Label" parent="NoteControl/MarginContainer/TaskVBox/TaskVBox3"]
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+text = "TEST TEST TEST TEST"
 autowrap_mode = 3

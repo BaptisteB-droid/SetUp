@@ -8,10 +8,7 @@ var zones_spawned : Array[drop_zone]
 var total_win_check : int
 var is_first_day : bool = true
 
-var task_list : task_list_control
-
 func _ready() -> void:
-	task_list = get_tree().get_first_node_in_group("Task_List_Control")
 	new_day()
 
 func _input(_event: InputEvent) -> void:
@@ -19,14 +16,18 @@ func _input(_event: InputEvent) -> void:
 		new_day()
 
 func new_day():
+	TaskListControl.clear_text()
 	#Premier jour pour éviter de destroy des trucs vides
 	if is_first_day:
 		current_event = events[0]
 		events.remove_at(0)
-		task_list.set_text.call_deferred(task_list.instructions[0])
+		TaskListControl.set_text()
+		TaskListControl.order_label_index = 0
 		instantiate_events()
 		is_first_day = false
 		OnScreenTimer.new_mission_time()
+		OnScreenTimer.prepare_next_client()
+		ClientsManager.client_orders_count = 0
 
 	else :
 		if events.size() == 0:
@@ -38,13 +39,17 @@ func new_day():
 			#Set actual event to 1st in array
 			current_event = events[0]
 			events.remove_at(0)
-			task_list.set_text(task_list.instructions[0])
+			TaskListControl.set_text()
+			TaskListControl.order_label_index = 0
 			instantiate_events()
 			OnScreenTimer.new_mission_time()
+			OnScreenTimer.prepare_next_client()
+			ClientsManager.client_orders_count = 0
 	pass
 
 func instantiate_events():
-	
+	print("_____")
+	ObjectsManager.drop_zones.clear()
 	#Spawn the different zones : 
 	#For each zone, spawn one and set its size and location right 
 	for n in current_event.zones_to_spawn.size():
@@ -61,12 +66,19 @@ func instantiate_events():
 		instance.items_target = current_event.zones_to_spawn[n].items_number.size()
 		instance.items_number = current_event.zones_to_spawn[n].items_number
 		instance.can_new_add_item = current_event.zones_to_spawn[n].can_add_new_item
+		instance.can_remove_item = current_event.zones_to_spawn[n].can_remove_item
+		instance.position_text = current_event.zones_to_spawn[n].task_position_text
 		
 		add_child(instance)
 		zones_spawned.append(instance)
 		ObjectsManager.get_needed_objects(instance)
+		print("instanciated ",instance)
 	
 	ObjectsManager.get_unused_items()
+	print("Remove")
+	ObjectsManager.remove_item_set()
+	print("Add")
+	ObjectsManager.new_item_set()
 	#Pop up the task list with the good information
 	pass
 
@@ -77,29 +89,34 @@ func instantiate_events():
 func wincheckpassed():
 	total_win_check += 1
 	
+	print(total_win_check)
+	
 	if total_win_check == zones_spawned.size() : 
-		print("ca marche")
-		
 		total_win_check = 0
 		new_day()
 		
 	pass
 
-func remove_wincheck():
-	total_win_check -= 1
+func remove_wincheck(zone : drop_zone):
+	print("Remove Wincheck")
+	if total_win_check > 0:
+		total_win_check -= 1
+	print(total_win_check)
+	zone.mesh_ref.material_override = zone.loose_material
 	pass
 
 func remove_old_event():
 	#Find all the zones and destroy them
 	for i in self.get_children():
+		
 		#Delete only dropzones to avoid destryong other children
 		if i.is_in_group("DropZone"):
+			print("remove",i)
 			i.queue_free()
 			zones_spawned.clear()
-	
-	task_list.instructions.remove_at(0)
+			zones_spawned = []
 	pass
-	
+
 func event_lost():
 	print("PERDU GROS PD")
 	new_day()

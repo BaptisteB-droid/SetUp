@@ -9,35 +9,42 @@
 script = ExtResource("2_0q3ju")
 client_name = "Client"
 client_image = ExtResource("3_uitjo")
-client_text = "Bonjour, vous pouvez mettre les fleurs là bas plutot ?"
-missions_array = Array[int]([1])
-min_chance = 0.0
-max_chance = 0.0
+client_flair = "Oui... Bonjour, j'aurais besoin que ce soit comme ça au final..."
+missions_array = Array[int]([2, 1, 2])
+min_chance = null
+max_chance = null
+client_time_less = null
+time_less_min = 5.0
+time_less_max = 15.0
 metadata/_custom_type_script = "uid://rn3o4okvnhlf"
 
 [sub_resource type="Resource" id="Resource_dko4a"]
 script = ExtResource("2_0q3ju")
 client_name = "Director"
 client_image = ExtResource("4_n3lnh")
-client_text = "Hop hop hop ! On se dépeche, tout doit être fini avant son arrivée !"
-missions_array = Array[int]([1])
-min_chance = 0.0
-max_chance = 0.0
+client_flair = "T'as deux minutes ? Faut changer ça en vitesse !"
+missions_array = Array[int]([2, 1, 2])
+min_chance = null
+max_chance = null
+client_time_less = null
+time_less_min = 2.0
+time_less_max = 20.0
 metadata/_custom_type_script = "uid://rn3o4okvnhlf"
 
-[sub_resource type="LabelSettings" id="LabelSettings_ncmyt"]
-font_size = 30
-outline_size = 1
+[sub_resource type="LabelSettings" id="LabelSettings_mbmeo"]
+font_size = 25
+outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_mbmeo"]
-font_size = 45
-outline_size = 2
+[sub_resource type="LabelSettings" id="LabelSettings_ncmyt"]
+font_size = 15
+outline_size = 1
 outline_color = Color(0, 0, 0, 1)
 
 [node name="ClientsManager" type="Node3D"]
 script = ExtResource("1_bl57c")
 clients = Array[ExtResource("2_0q3ju")]([SubResource("Resource_gptuj"), SubResource("Resource_dko4a")])
+client_max_time_on_screen = 5.0
 
 [node name="Clients_Control" type="Control" parent="."]
 layout_mode = 3
@@ -46,29 +53,58 @@ offset_right = 1152.0
 offset_bottom = 648.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Image_Texture" type="TextureRect" parent="Clients_Control"]
-layout_mode = 0
-offset_top = 1.0
-offset_right = 386.0
-offset_bottom = 648.0
+[node name="PanelContainer" type="PanelContainer" parent="Clients_Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -102.0
+offset_right = 576.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Clients_Control/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Clients_Control/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Image_Texture" type="TextureRect" parent="Clients_Control/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Order_Label" type="Label" parent="Clients_Control"]
-layout_mode = 0
-offset_left = 425.0
-offset_top = 400.0
-offset_right = 1152.0
-offset_bottom = 648.0
+[node name="MarginContainer" type="MarginContainer" parent="Clients_Control/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Clients_Control/PanelContainer/MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Name_Label" type="Label" parent="Clients_Control/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_mbmeo")
+metadata/_edit_use_anchors_ = true
+
+[node name="Flair_Label" type="Label" parent="Clients_Control/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
 label_settings = SubResource("LabelSettings_ncmyt")
 vertical_alignment = 1
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
-[node name="Name_Label" type="Label" parent="Clients_Control"]
-layout_mode = 0
-offset_left = 493.0
-offset_top = 380.0
-offset_right = 1154.0
-offset_bottom = 428.0
-label_settings = SubResource("LabelSettings_mbmeo")
+[node name="Order_Label" type="Label" parent="Clients_Control/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_ncmyt")
+vertical_alignment = 1
+autowrap_mode = 3
 metadata/_edit_use_anchors_ = true

@@ -34,7 +34,7 @@ shape = SubResource("CapsuleShape3D_uvnfx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
 
 [node name="RayCast3D" type="RayCast3D" parent="Hands"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, -0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, -1)
 target_position = Vector3(0, 0, 4)
 hit_back_faces = false
 

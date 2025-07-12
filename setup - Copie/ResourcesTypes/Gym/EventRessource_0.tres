@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="events_resource" load_steps=8 format=3 uid="uid://dyk6fu2dx1eda"]
+
+[ext_resource type="Script" uid="uid://s6gejvw7qlan" path="res://Scripts/Resources/events_resource.gd" id="1_ea1x5"]
+[ext_resource type="Resource" uid="uid://2qctvu4t4ijb" path="res://ResourcesTypes/Gym/TaskResource_0.tres" id="2_lk5ej"]
+[ext_resource type="Script" uid="uid://tcjkf2fs2uxs" path="res://Scripts/Resources/zone_resource.gd" id="3_v8g0m"]
+[ext_resource type="PackedScene" uid="uid://chy6r3vuublwr" path="res://Scenes/Gameplay/DropZone.tscn" id="4_xs05c"]
+
+[sub_resource type="Resource" id="Resource_n3uqo"]
+script = ExtResource("3_v8g0m")
+dropzone_scene = ExtResource("4_xs05c")
+zone_position = Vector3(11, 0, -16)
+zone_rotation = Vector3(0, 0, 0)
+zone_scale = Vector3(2, 1, 2)
+items_number = Array[String](["Water"])
+can_add_new_item = false
+can_remove_item = false
+task_position_text = "next to the bar"
+metadata/_custom_type_script = "uid://tcjkf2fs2uxs"
+
+[sub_resource type="Resource" id="Resource_e3h43"]
+script = ExtResource("3_v8g0m")
+dropzone_scene = ExtResource("4_xs05c")
+zone_position = Vector3(11, 0, 9.5)
+zone_rotation = Vector3(0, 0, 0)
+zone_scale = Vector3(6, 1, 10)
+items_number = Array[String](["Chair", "Table", "Chair"])
+can_add_new_item = false
+can_remove_item = true
+task_position_text = "between the pillars"
+metadata/_custom_type_script = "uid://tcjkf2fs2uxs"
+
+[sub_resource type="Resource" id="Resource_gptuj"]
+script = ExtResource("3_v8g0m")
+dropzone_scene = ExtResource("4_xs05c")
+zone_position = Vector3(-7, 0, 17)
+zone_rotation = Vector3(0, 0, 0)
+zone_scale = Vector3(4, 1, 4)
+items_number = Array[String](["Chair"])
+can_add_new_item = true
+can_remove_item = false
+task_position_text = "at the back"
+metadata/_custom_type_script = "uid://tcjkf2fs2uxs"
+
+[resource]
+script = ExtResource("1_ea1x5")
+zones_to_spawn = Array[ExtResource("3_v8g0m")]([SubResource("Resource_n3uqo"), SubResource("Resource_e3h43"), SubResource("Resource_gptuj")])
+task_text_resource = ExtResource("2_lk5ej")
+max_task_number = 2
+timer = 60.0
+metadata/_custom_type_script = "uid://s6gejvw7qlan"

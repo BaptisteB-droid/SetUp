@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name player
 
 @export var base_speed: float = 200.0
 @export var sprint_speed: float = 500.0

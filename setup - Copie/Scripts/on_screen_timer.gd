@@ -1,9 +1,9 @@
 extends Control
 class_name on_screen_timer
 
-@onready var label : Label = $Label_Timer
+@onready var label : Label = $PanelContainer/MarginContainer/VBoxContainer/Label_Timer
 @onready var timer : Timer = $Timer_Timer
-@onready var deadline_label : Label = $Label_Deadline/Label_Deadline_Time
+@onready var deadline_label
 
 @export_group("Timer")
 @export var total_time_seconds : int = 420
@@ -30,22 +30,16 @@ func _ready() -> void:
 	timer.wait_time = second_speed
 	timer.start()
 	label.text = begin_time
-	
-
-	
-	if debug_bool == true:
-		prepare_next_client()
-	
-	time_for_mission = EventManager.current_event.timer
-	mission_end_time = total_time_seconds + time_for_mission
-	
-	var m = int(mission_end_time/60)
-	var s = mission_end_time - m * 60
-	deadline_label.text = '%02d : %02d' % [m, s]
 
 func new_mission_time():
 	time_for_mission = EventManager.current_event.timer
 	mission_end_time = total_time_seconds + time_for_mission
+	
+	deadline_label = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Label_Deadline_Time
+	
+	var m = int(mission_end_time/60)
+	var s = mission_end_time - m * 60
+	deadline_label.text = '%02d : %02d' % [m, s]
 
 func prepare_next_client():
 	var roll = randf()
@@ -61,7 +55,7 @@ func prepare_next_client():
 
 
 func _process(_delta: float) -> void:
-	if total_time_seconds == new_order_time:
+	if total_time_seconds == new_order_time and ClientsManager.client_orders_count < ClientsManager.max_client_orders:
 		call_new_order()
 	
 	#Si le timer dépasse alors faire perdre
@@ -71,19 +65,23 @@ func _process(_delta: float) -> void:
 	pass
 
 func call_new_order():
-	if first_call : 
+	if first_call: 
 		ClientsManager.new_order()
 		first_call = false
-		if debug_bool == true:
-			prepare_next_client()
+		prepare_next_client()
+		ClientsManager.client_orders_count += 1
 
-func mission_timechange(time_less : float):
+
+func mission_timechange(time_less_min : float, time_less_max : float):
+	
+	var time_less : float
+	
+	time_less = roundi(randf_range(time_less_min, time_less_max))
 	mission_end_time -= time_less
 	
 	var m = int(mission_end_time/60)
 	var s = mission_end_time - m * 60
 	deadline_label.text = '%02d : %02d' % [m, s]
-	print('%02d : %02d' % [m, s])
 	
 	pass
 

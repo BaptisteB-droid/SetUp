@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="events_resource" load_steps=8 format=3 uid="uid://blvv7bwfkhcq7"]
+
+[ext_resource type="Script" uid="uid://s6gejvw7qlan" path="res://Scripts/Resources/events_resource.gd" id="1_qnwlu"]
+[ext_resource type="Script" uid="uid://tcjkf2fs2uxs" path="res://Scripts/Resources/zone_resource.gd" id="2_mgcev"]
+[ext_resource type="Resource" uid="uid://bpbjt0tk1p1yt" path="res://ResourcesTypes/Gym/TaskResource_2.tres" id="2_v1nbw"]
+[ext_resource type="PackedScene" uid="uid://chy6r3vuublwr" path="res://Scenes/Gameplay/DropZone.tscn" id="3_mgcev"]
+
+[sub_resource type="Resource" id="Resource_v1nbw"]
+script = ExtResource("2_mgcev")
+dropzone_scene = ExtResource("3_mgcev")
+zone_position = Vector3(8.5, 0, 15)
+zone_rotation = Vector3(0, 0, 0)
+zone_scale = Vector3(4, 1, 6)
+items_number = Array[String](["Table", "Chair", "Chair"])
+can_add_new_item = true
+can_remove_item = true
+task_position_text = "left to the bottom pillar."
+metadata/_custom_type_script = "uid://tcjkf2fs2uxs"
+
+[sub_resource type="Resource" id="Resource_h7ews"]
+script = ExtResource("2_mgcev")
+dropzone_scene = ExtResource("3_mgcev")
+zone_position = Vector3(8.5, 0, 4)
+zone_rotation = Vector3(0, 0, 0)
+zone_scale = Vector3(4, 1, 6)
+items_number = Array[String](["Table", "Chair", "Chair"])
+can_add_new_item = true
+can_remove_item = true
+task_position_text = "left to the top pillar."
+metadata/_custom_type_script = "uid://tcjkf2fs2uxs"
+
+[sub_resource type="Resource" id="Resource_dwtqr"]
+script = ExtResource("2_mgcev")
+dropzone_scene = ExtResource("3_mgcev")
+zone_position = Vector3(-9.5, 0, 8)
+zone_rotation = Vector3(0, 0, 0)
+zone_scale = Vector3(4, 1, 6)
+items_number = Array[String](["Water", "Water"])
+can_add_new_item = true
+can_remove_item = true
+task_position_text = "back of the room between the pillars."
+metadata/_custom_type_script = "uid://tcjkf2fs2uxs"
+
+[resource]
+script = ExtResource("1_qnwlu")
+zones_to_spawn = Array[ExtResource("2_mgcev")]([SubResource("Resource_v1nbw"), SubResource("Resource_h7ews"), SubResource("Resource_dwtqr")])
+task_text_resource = ExtResource("2_v1nbw")
+max_task_number = 3
+timer = 60.0
+metadata/_custom_type_script = "uid://s6gejvw7qlan"

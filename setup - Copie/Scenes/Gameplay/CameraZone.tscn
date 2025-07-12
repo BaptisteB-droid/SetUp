@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://7nlcbwof5q2v"]
 
-[ext_resource type="Script" uid="uid://bnswxxvabcwof" path="res://Scripts/room_zone.gd" id="1_ugwb5"]
+[ext_resource type="Script" uid="uid://bnswxxvabcwof" path="res://Scripts/camera_zone.gd" id="1_ugwb5"]
 [ext_resource type="Material" uid="uid://l0ybwajidtq3" path="res://Materials/Gameplay/M_Win.tres" id="2_ygltk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fdovs"]

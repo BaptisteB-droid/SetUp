@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="task_resource" load_steps=2 format=3 uid="uid://1jhwae4y21ev"]
+
+[ext_resource type="Script" uid="uid://clvuhnoqs1poj" path="res://Scripts/Resources/task_resource.gd" id="1_f10bl"]
+
+[resource]
+script = ExtResource("1_f10bl")
+task_intro = "We need to adjust the placement for the reception"
+task_body = Array[String](["Put a table and five chairs in the", "center of the main room", "And some water next to the storage room door"])
+task_outro = "Quick, it's starting soon"
+metadata/_custom_type_script = "uid://clvuhnoqs1poj"

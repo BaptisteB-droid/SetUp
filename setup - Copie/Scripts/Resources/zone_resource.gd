@@ -11,3 +11,7 @@ class_name zone_resource
 @export_group("Zone Conditions")
 @export var items_number : Array[String]
 @export var can_add_new_item : bool
+@export var can_remove_item : bool
+
+@export_group("Other")
+@export var task_position_text : String

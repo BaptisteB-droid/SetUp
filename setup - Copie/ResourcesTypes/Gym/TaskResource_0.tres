@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="task_resource" load_steps=2 format=3 uid="uid://2qctvu4t4ijb"]
+
+[ext_resource type="Script" uid="uid://clvuhnoqs1poj" path="res://Scripts/Resources/task_resource.gd" id="1_2gpuj"]
+
+[resource]
+script = ExtResource("1_2gpuj")
+task_intro = "Commence à préparer la salle il faut :"
+task_body = Array[String](["Une fontaine à  eau au fond à coté du bar.", "Deux chaise et une table entre les poteaux", "Une chaise au fond de la pièce"])
+task_outro = "Tout est dans la réserve."
+metadata/_custom_type_script = "uid://clvuhnoqs1poj"

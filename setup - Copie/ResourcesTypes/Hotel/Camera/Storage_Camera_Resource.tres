@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CameraResource" load_steps=2 format=3 uid="uid://c8tgw7xo61xd4"]
+
+[ext_resource type="Script" uid="uid://dw8iu53b0xvdk" path="res://Scripts/Resources/camera_resource.gd" id="1_dajqb"]
+
+[resource]
+script = ExtResource("1_dajqb")
+camera_position = Vector3(5, 8.5, -9)
+camera_rotation = Vector3(-75, 0, 0)
+collisionshape_scale = Vector3(10, 1, 10)
+metadata/_custom_type_script = "uid://dw8iu53b0xvdk"

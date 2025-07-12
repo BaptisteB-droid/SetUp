@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="events_resource" load_steps=7 format=3 uid="uid://tsis7s338shb"]
+
+[ext_resource type="Script" uid="uid://s6gejvw7qlan" path="res://Scripts/Resources/events_resource.gd" id="1_vp1t2"]
+[ext_resource type="Resource" uid="uid://1jhwae4y21ev" path="res://ResourcesTypes/Gym/TaskResource_1.tres" id="2_lopxm"]
+[ext_resource type="Script" uid="uid://tcjkf2fs2uxs" path="res://Scripts/Resources/zone_resource.gd" id="3_vy8kt"]
+[ext_resource type="PackedScene" uid="uid://chy6r3vuublwr" path="res://Scenes/Gameplay/DropZone.tscn" id="4_qrc5k"]
+
+[sub_resource type="Resource" id="Resource_dko4a"]
+script = ExtResource("3_vy8kt")
+dropzone_scene = ExtResource("4_qrc5k")
+zone_position = Vector3(0, 0, 10)
+zone_rotation = Vector3(0, 0, 0)
+zone_scale = Vector3(10, 1, 10)
+items_number = Array[String](["Chair", "Chair", "Table", "Chair", "Chair", "Chair"])
+can_add_new_item = true
+can_remove_item = true
+task_position_text = "the middle of the room."
+metadata/_custom_type_script = "uid://tcjkf2fs2uxs"
+
+[sub_resource type="Resource" id="Resource_ontuc"]
+script = ExtResource("3_vy8kt")
+dropzone_scene = ExtResource("4_qrc5k")
+zone_position = Vector3(-7, 0, -1)
+zone_rotation = Vector3(0, 0, 0)
+zone_scale = Vector3(2, 1, 2)
+items_number = Array[String](["Water"])
+can_add_new_item = true
+can_remove_item = false
+task_position_text = "next to the storage room's door."
+metadata/_custom_type_script = "uid://tcjkf2fs2uxs"
+
+[resource]
+script = ExtResource("1_vp1t2")
+zones_to_spawn = Array[ExtResource("3_vy8kt")]([SubResource("Resource_dko4a"), SubResource("Resource_ontuc")])
+task_text_resource = ExtResource("2_lopxm")
+max_task_number = 3
+timer = 45.0
+metadata/_custom_type_script = "uid://s6gejvw7qlan"

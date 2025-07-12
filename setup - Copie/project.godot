@@ -11,16 +11,17 @@ config_version=5
 [application]
 
 config/name="SetUp"
-run/main_scene="uid://dd8tw51yvdsoh"
+run/main_scene="uid://com23wc2cqwva"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 EventManager="*res://Scenes/Gameplay/EventManager.tscn"
-OnScreenTimer="*res://Scenes/GUI/on_screen_timer.tscn"
 ClientsManager="*res://Scenes/Gameplay/clients_manager.tscn"
 ObjectsManager="*res://Scenes/Gameplay/objects_manager.tscn"
+OnScreenTimer="*res://Scenes/GUI/on_screen_timer.tscn"
+TaskListControl="*res://Scenes/GUI/task_list_control.tscn"
 
 [global_group]
 
@@ -29,6 +30,10 @@ Camera=""
 Player=""
 Task_List_Control=""
 DropZone=""
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
 
 [input]
 

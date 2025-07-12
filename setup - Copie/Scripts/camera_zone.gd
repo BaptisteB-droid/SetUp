@@ -1,8 +1,10 @@
 extends Area3D
+class_name camera_zone
 
 @export var room_data : CameraResource
+@onready var camera : camera_manager
 
-@onready var camera : Camera3D
+@export var follow_player : bool = false
 
 var camera_moving : bool = false
 var t = 0.0
@@ -17,7 +19,6 @@ func _ready() -> void:
 	camera = camera_array[0]
 
 func _on_body_entered(body: Node3D) -> void:
-	
 	if body.is_in_group("Player"):
-		
+		camera.camera_follow = follow_player
 		camera.position = room_data.camera_position

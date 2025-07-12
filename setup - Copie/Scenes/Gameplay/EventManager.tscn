@@ -1,10 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://boaglfthc2fje"]
+[gd_scene load_steps=10 format=3 uid="uid://boaglfthc2fje"]
 
 [ext_resource type="Script" uid="uid://c3r5km5pt2mib" path="res://Scripts/Managers/event_manager.gd" id="1_5utxg"]
 [ext_resource type="Script" uid="uid://s6gejvw7qlan" path="res://Scripts/Resources/events_resource.gd" id="2_cnthx"]
-[ext_resource type="Resource" uid="uid://dyk6fu2dx1eda" path="res://ResourcesTypes/EventRessource_0.tres" id="3_e3h43"]
-[ext_resource type="Resource" uid="uid://tsis7s338shb" path="res://ResourcesTypes/EventRessource_1.tres" id="4_n3uqo"]
+[ext_resource type="Resource" uid="uid://dyk6fu2dx1eda" path="res://ResourcesTypes/Gym/EventRessource_0.tres" id="3_e3h43"]
+[ext_resource type="Resource" uid="uid://tsis7s338shb" path="res://ResourcesTypes/Gym/EventRessource_1.tres" id="4_n3uqo"]
+[ext_resource type="Resource" uid="uid://blvv7bwfkhcq7" path="res://ResourcesTypes/Gym/EventRessource_2.tres" id="5_e3h43"]
+[ext_resource type="Script" uid="uid://tcjkf2fs2uxs" path="res://Scripts/Resources/zone_resource.gd" id="6_gptuj"]
+
+[sub_resource type="Resource" id="Resource_dko4a"]
+script = ExtResource("6_gptuj")
+zone_position = Vector3(0, 0, 0)
+zone_rotation = Vector3(0, 0, 0)
+zone_scale = Vector3(0, 0, 0)
+items_number = Array[String]([])
+can_add_new_item = false
+can_remove_item = false
+task_position_text = ""
+metadata/_custom_type_script = "uid://tcjkf2fs2uxs"
+
+[sub_resource type="Resource" id="Resource_ontuc"]
+script = ExtResource("6_gptuj")
+zone_position = Vector3(0, 0, 0)
+zone_rotation = Vector3(0, 0, 0)
+zone_scale = Vector3(0, 0, 0)
+items_number = Array[String]([])
+can_add_new_item = false
+can_remove_item = false
+task_position_text = ""
+metadata/_custom_type_script = "uid://tcjkf2fs2uxs"
+
+[sub_resource type="Resource" id="Resource_8rk78"]
+script = ExtResource("2_cnthx")
+zones_to_spawn = Array[ExtResource("6_gptuj")]([SubResource("Resource_dko4a"), SubResource("Resource_ontuc")])
+max_task_number = 0
+timer = 0.0
+metadata/_custom_type_script = "uid://s6gejvw7qlan"
 
 [node name="EventManager" type="Node3D"]
 script = ExtResource("1_5utxg")
-events = Array[ExtResource("2_cnthx")]([ExtResource("3_e3h43"), ExtResource("4_n3uqo")])
+events = Array[ExtResource("2_cnthx")]([ExtResource("3_e3h43"), ExtResource("4_n3uqo"), ExtResource("5_e3h43"), SubResource("Resource_8rk78")])
