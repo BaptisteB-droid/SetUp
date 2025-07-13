@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://com23wc2cqwva"]
+[gd_scene load_steps=17 format=3 uid="uid://com23wc2cqwva"]
 
 [ext_resource type="PackedScene" uid="uid://cx1n2tidt5dc7" path="res://Scenes/Player/camera_3d.tscn" id="1_3jytk"]
 [ext_resource type="PackedScene" uid="uid://28yr4nh2fhs" path="res://Scenes/Player/player.tscn" id="2_gunkp"]
@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://compjydfdaml6" path="res://ResourcesTypes/Hotel/Camera/Lobby_Camera_Resource.tres" id="9_h87uo"]
 [ext_resource type="Resource" uid="uid://i57pm2ieayjc" path="res://ResourcesTypes/Hotel/Camera/Room_Camera_Resource.tres" id="9_pydox"]
 [ext_resource type="Resource" uid="uid://c8tgw7xo61xd4" path="res://ResourcesTypes/Hotel/Camera/Storage_Camera_Resource.tres" id="10_3jytk"]
+[ext_resource type="PackedScene" uid="uid://chy6r3vuublwr" path="res://Scenes/Gameplay/DropZone.tscn" id="12_gunkp"]
 
 [sub_resource type="GDScript" id="GDScript_ak3lr"]
 
@@ -52,191 +53,450 @@ base_speed = 500.0
 
 [node name="Architecture" type="Node" parent="LevelDesign"]
 
-[node name="Reception" type="Node" parent="LevelDesign/Architecture"]
-
-[node name="Ground" type="CSGCombiner3D" parent="LevelDesign/Architecture/Reception"]
+[node name="Ground" type="CSGCombiner3D" parent="LevelDesign/Architecture"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/Ground"]
+[node name="CSGBox3D" type="CSGBox3D" parent="LevelDesign/Architecture/Ground"]
 size = Vector3(20, 1, 15)
 material = ExtResource("4_3jytk")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/Ground"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="LevelDesign/Architecture/Ground"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -12.5)
 size = Vector3(10, 1, 10)
 material = ExtResource("4_3jytk")
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/Ground"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="LevelDesign/Architecture/Ground"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 0)
 size = Vector3(50, 1, 24)
 material = ExtResource("4_3jytk")
 
-[node name="OutsideWalls" type="CSGCombiner3D" parent="LevelDesign/Architecture/Reception"]
+[node name="OutsideWalls" type="CSGCombiner3D" parent="LevelDesign/Architecture"]
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/OutsideWalls"]
+[node name="CSGBox3D" type="CSGBox3D" parent="LevelDesign/Architecture/OutsideWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 8)
 size = Vector3(20, 4, 1)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/OutsideWalls"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="LevelDesign/Architecture/OutsideWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -8)
 size = Vector3(15, 4, 1)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/OutsideWalls"]
+[node name="CSGBox3D7" type="CSGBox3D" parent="LevelDesign/Architecture/OutsideWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, -8)
 size = Vector3(2, 4, 1)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/OutsideWalls"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="LevelDesign/Architecture/OutsideWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, -18)
 size = Vector3(10, 4, 1)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/OutsideWalls"]
+[node name="CSGBox3D4" type="CSGBox3D" parent="LevelDesign/Architecture/OutsideWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, -18)
 size = Vector3(10, 4, 1)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/OutsideWalls"]
+[node name="CSGBox3D5" type="CSGBox3D" parent="LevelDesign/Architecture/OutsideWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 1, -5)
 size = Vector3(1, 4, 27)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/OutsideWalls"]
+[node name="CSGBox3D6" type="CSGBox3D" parent="LevelDesign/Architecture/OutsideWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -13.5)
 size = Vector3(1, 4, 10)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D8" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/OutsideWalls"]
+[node name="CSGBox3D8" type="CSGBox3D" parent="LevelDesign/Architecture/OutsideWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 1, -7)
 size = Vector3(1, 4, 10)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D9" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/OutsideWalls"]
+[node name="CSGBox3D9" type="CSGBox3D" parent="LevelDesign/Architecture/OutsideWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 1, 7)
 size = Vector3(1, 4, 10)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D10" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/OutsideWalls"]
+[node name="CSGBox3D10" type="CSGBox3D" parent="LevelDesign/Architecture/OutsideWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 1, -12.5)
 size = Vector3(50, 4, 1)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D11" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/OutsideWalls"]
+[node name="CSGBox3D11" type="CSGBox3D" parent="LevelDesign/Architecture/OutsideWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 1, 12.5)
 size = Vector3(50, 4, 1)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D12" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/OutsideWalls"]
+[node name="CSGBox3D12" type="CSGBox3D" parent="LevelDesign/Architecture/OutsideWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.5, 1, 0)
 size = Vector3(1, 4, 26)
 material = ExtResource("3_h87uo")
 
-[node name="RoomWalls" type="CSGCombiner3D" parent="LevelDesign/Architecture/Reception"]
+[node name="RoomWalls" type="CSGCombiner3D" parent="LevelDesign/Architecture"]
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/RoomWalls"]
+[node name="CSGBox3D" type="CSGBox3D" parent="LevelDesign/Architecture/RoomWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5, 1, -7.5)
 size = Vector3(1, 4, 9)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/RoomWalls"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="LevelDesign/Architecture/RoomWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.5, 1, -7.5)
 size = Vector3(1, 4, 9)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/RoomWalls"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="LevelDesign/Architecture/RoomWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 1, -7.5)
 size = Vector3(1, 4, 9)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/RoomWalls"]
+[node name="CSGBox3D4" type="CSGBox3D" parent="LevelDesign/Architecture/RoomWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.5, 1, -7.5)
 size = Vector3(1, 4, 9)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/RoomWalls"]
+[node name="CSGBox3D5" type="CSGBox3D" parent="LevelDesign/Architecture/RoomWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5, 1, 7.5)
 size = Vector3(1, 4, 9)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/RoomWalls"]
+[node name="CSGBox3D6" type="CSGBox3D" parent="LevelDesign/Architecture/RoomWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.5, 1, 7.5)
 size = Vector3(1, 4, 9)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/RoomWalls"]
+[node name="CSGBox3D7" type="CSGBox3D" parent="LevelDesign/Architecture/RoomWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 1, 7.5)
 size = Vector3(1, 4, 9)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D8" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/RoomWalls"]
+[node name="CSGBox3D8" type="CSGBox3D" parent="LevelDesign/Architecture/RoomWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.5, 1, 7.5)
 size = Vector3(1, 4, 9)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D17" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/RoomWalls"]
+[node name="CSGBox3D17" type="CSGBox3D" parent="LevelDesign/Architecture/RoomWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.5, 1, -2.5)
 size = Vector3(5, 4, 1)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D18" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/RoomWalls"]
+[node name="CSGBox3D18" type="CSGBox3D" parent="LevelDesign/Architecture/RoomWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.5, 1, 2.5)
 size = Vector3(5, 4, 1)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D19" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/RoomWalls"]
+[node name="CSGBox3D19" type="CSGBox3D" parent="LevelDesign/Architecture/RoomWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.5, 1, -2.5)
 size = Vector3(7, 4, 1)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D20" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/RoomWalls"]
+[node name="CSGBox3D20" type="CSGBox3D" parent="LevelDesign/Architecture/RoomWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.5, 1, 2.5)
 size = Vector3(7, 4, 1)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D21" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/RoomWalls"]
+[node name="CSGBox3D21" type="CSGBox3D" parent="LevelDesign/Architecture/RoomWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.5, 1, -2.5)
 size = Vector3(7, 4, 1)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D22" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/RoomWalls"]
+[node name="CSGBox3D22" type="CSGBox3D" parent="LevelDesign/Architecture/RoomWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.5, 1, 2.5)
 size = Vector3(7, 4, 1)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D23" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/RoomWalls"]
+[node name="CSGBox3D23" type="CSGBox3D" parent="LevelDesign/Architecture/RoomWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.5, 1, -2.5)
 size = Vector3(7, 4, 1)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D24" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/RoomWalls"]
+[node name="CSGBox3D24" type="CSGBox3D" parent="LevelDesign/Architecture/RoomWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.5, 1, 2.5)
 size = Vector3(7, 4, 1)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D25" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/RoomWalls"]
+[node name="CSGBox3D25" type="CSGBox3D" parent="LevelDesign/Architecture/RoomWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, 1, -2.5)
 size = Vector3(7, 4, 1)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D26" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/RoomWalls"]
+[node name="CSGBox3D26" type="CSGBox3D" parent="LevelDesign/Architecture/RoomWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, 1, 2.5)
 size = Vector3(7, 4, 1)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D27" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/RoomWalls"]
+[node name="CSGBox3D27" type="CSGBox3D" parent="LevelDesign/Architecture/RoomWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1, -2.5)
 size = Vector3(2, 4, 1)
 material = ExtResource("3_h87uo")
 
-[node name="CSGBox3D28" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/RoomWalls"]
+[node name="CSGBox3D28" type="CSGBox3D" parent="LevelDesign/Architecture/RoomWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1, 2.5)
 size = Vector3(2, 4, 1)
 material = ExtResource("3_h87uo")
+
+[node name="Rooms" type="Node" parent="LevelDesign/Architecture"]
+
+[node name="Room1" type="CSGCombiner3D" parent="LevelDesign/Architecture/Rooms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0.5, 8)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1)
+size = Vector3(3, 1, 2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 1)
+size = Vector3(1, 1, 3)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room1"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.400002, 0, -3.6)
+size = Vector3(1.5, 1, 1.5)
+
+[node name="Sprite3D" type="Label3D" parent="LevelDesign/Architecture/Rooms"]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, -16.1, 3.2, 2.5)
+pixel_size = 0.03
+text = "101"
+
+[node name="Room2" type="CSGCombiner3D" parent="LevelDesign/Architecture/Rooms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0.5, 8)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1)
+size = Vector3(3, 1, 2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 1)
+size = Vector3(1, 1, 3)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room2"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.400002, 0, -3.6)
+size = Vector3(1.5, 1, 1.5)
+
+[node name="Sprite3D2" type="Label3D" parent="LevelDesign/Architecture/Rooms"]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, -26.1, 3.2, 2.5)
+pixel_size = 0.03
+text = "102
+"
+
+[node name="Room3" type="CSGCombiner3D" parent="LevelDesign/Architecture/Rooms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39, 0.5, 8)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1)
+size = Vector3(3, 1, 2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 1)
+size = Vector3(1, 1, 3)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room3"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.400002, 0, -3.6)
+size = Vector3(1.5, 1, 1.5)
+
+[node name="Sprite3D3" type="Label3D" parent="LevelDesign/Architecture/Rooms"]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, -36.1, 3.2, 2.5)
+pixel_size = 0.03
+text = "103"
+
+[node name="Room4" type="CSGCombiner3D" parent="LevelDesign/Architecture/Rooms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 0.5, 8)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1)
+size = Vector3(3, 1, 2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 1)
+size = Vector3(1, 1, 3)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room4"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.400002, 0, -3.6)
+size = Vector3(1.5, 1, 1.5)
+
+[node name="Sprite3D4" type="Label3D" parent="LevelDesign/Architecture/Rooms"]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, -46.1, 3.2, 2.5)
+pixel_size = 0.03
+text = "104
+"
+
+[node name="Room5" type="CSGCombiner3D" parent="LevelDesign/Architecture/Rooms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59, 0.5, 8)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1)
+size = Vector3(3, 1, 2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 1)
+size = Vector3(1, 1, 3)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room5"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.400002, 0, -3.6)
+size = Vector3(1.5, 1, 1.5)
+
+[node name="Sprite3D5" type="Label3D" parent="LevelDesign/Architecture/Rooms"]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, -56.1, 3.2, 2.5)
+pixel_size = 0.03
+text = "105
+"
+
+[node name="Room6" type="CSGCombiner3D" parent="LevelDesign/Architecture/Rooms"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -59, 0.5, -7)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499996, 0, -2)
+size = Vector3(3, 1, 2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -2)
+size = Vector3(1, 1, 3)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room6"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.400002, 0, 2.4)
+size = Vector3(1.5, 1, 1.5)
+
+[node name="Sprite3D6" type="Label3D" parent="LevelDesign/Architecture/Rooms"]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, -16.1, 3.2, -2.5)
+pixel_size = 0.03
+text = "106
+"
+
+[node name="Room7" type="CSGCombiner3D" parent="LevelDesign/Architecture/Rooms"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -49, 0.5, -7)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499996, 0, -2)
+size = Vector3(3, 1, 2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -2)
+size = Vector3(1, 1, 3)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room7"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.400002, 0, 2.4)
+size = Vector3(1.5, 1, 1.5)
+
+[node name="Sprite3D7" type="Label3D" parent="LevelDesign/Architecture/Rooms"]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, -26.1, 3.2, -2.5)
+pixel_size = 0.03
+text = "107
+"
+
+[node name="Room8" type="CSGCombiner3D" parent="LevelDesign/Architecture/Rooms"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -39, 0.5, -7)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499996, 0, -2)
+size = Vector3(3, 1, 2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -2)
+size = Vector3(1, 1, 3)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room8"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.400002, 0, 2.4)
+size = Vector3(1.5, 1, 1.5)
+
+[node name="Sprite3D8" type="Label3D" parent="LevelDesign/Architecture/Rooms"]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, -36.1, 3.2, -2.5)
+pixel_size = 0.03
+text = "108
+"
+
+[node name="Room9" type="CSGCombiner3D" parent="LevelDesign/Architecture/Rooms"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -29, 0.5, -7)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499996, 0, -2)
+size = Vector3(3, 1, 2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -2)
+size = Vector3(1, 1, 3)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room9"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.400002, 0, 2.4)
+size = Vector3(1.5, 1, 1.5)
+
+[node name="Sprite3D9" type="Label3D" parent="LevelDesign/Architecture/Rooms"]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, -46.1, 3.2, -2.5)
+pixel_size = 0.03
+text = "109"
+
+[node name="Room10" type="CSGCombiner3D" parent="LevelDesign/Architecture/Rooms"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -19, 0.5, -7)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499996, 0, -2)
+size = Vector3(3, 1, 2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -2)
+size = Vector3(1, 1, 3)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="LevelDesign/Architecture/Rooms/Room10"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.400002, 0, 2.4)
+size = Vector3(1.5, 1, 1.5)
+
+[node name="Sprite3D10" type="Label3D" parent="LevelDesign/Architecture/Rooms"]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, -56.1, 3.2, -2.5)
+pixel_size = 0.03
+text = "110
+"
+
+[node name="Reception" type="Node" parent="LevelDesign/Architecture"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="LevelDesign/Architecture/Reception"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -4)
+size = Vector3(10, 1, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 4)
+size = Vector3(2, 1, 2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 2)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 4)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 6)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 4.4)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 6)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 4)
+size = Vector3(2, 1, 2)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0, 4)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, 6)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="LevelDesign/Architecture/Reception/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, 6)
 
 [node name="Gameplay" type="Node" parent="."]
 
@@ -286,3 +546,49 @@ room_data = ExtResource("10_3jytk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 0)
 room_data = ExtResource("9_pydox")
 follow_player = true
+
+[node name="DropZones" type="Node" parent="Gameplay"]
+
+[node name="Area3D" parent="Gameplay/DropZones" instance=ExtResource("12_gunkp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, 0, 7.5)
+collision_size = Vector3(9, 1, 9)
+
+[node name="Area3D2" parent="Gameplay/DropZones" instance=ExtResource("12_gunkp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5, 0, 7.5)
+collision_size = Vector3(9, 1, 9)
+
+[node name="Area3D3" parent="Gameplay/DropZones" instance=ExtResource("12_gunkp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.5, 0, 7.5)
+collision_size = Vector3(9, 1, 9)
+
+[node name="Area3D4" parent="Gameplay/DropZones" instance=ExtResource("12_gunkp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.5, 0, 7.5)
+collision_size = Vector3(9, 1, 9)
+
+[node name="Area3D5" parent="Gameplay/DropZones" instance=ExtResource("12_gunkp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.5, 0, 7.5)
+collision_size = Vector3(9, 1, 9)
+
+[node name="Area3D6" parent="Gameplay/DropZones" instance=ExtResource("12_gunkp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, 0, -7.5)
+collision_size = Vector3(9, 1, 9)
+
+[node name="Area3D7" parent="Gameplay/DropZones" instance=ExtResource("12_gunkp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5, 0, -7.5)
+collision_size = Vector3(9, 1, 9)
+
+[node name="Area3D8" parent="Gameplay/DropZones" instance=ExtResource("12_gunkp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.5, 0, -7.5)
+collision_size = Vector3(9, 1, 9)
+
+[node name="Area3D9" parent="Gameplay/DropZones" instance=ExtResource("12_gunkp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.5, 0, -7.5)
+collision_size = Vector3(9, 1, 9)
+
+[node name="Area3D10" parent="Gameplay/DropZones" instance=ExtResource("12_gunkp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.5, 0, -7.5)
+collision_size = Vector3(9, 1, 9)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Gameplay/DropZones"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, 0, 7.5)
+size = Vector3(9, 1, 9)

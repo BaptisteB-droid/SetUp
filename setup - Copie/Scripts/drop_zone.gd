@@ -4,6 +4,7 @@ class_name drop_zone
 var items_in_zone: Array[String]
 var is_completed : bool = false
 
+@export var collision_size : Vector3
 @export_group("Conditions")
 @export var items_target : int = 1
 @export var items_number : Array[String]
@@ -19,6 +20,9 @@ var is_completed : bool = false
 @export var position_text : String
 
 @onready var trigger_zone = $CollisionShape3D
+
+func _ready() -> void:
+	trigger_zone.scale = collision_size
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("PickableObjects") and pickable_object:
